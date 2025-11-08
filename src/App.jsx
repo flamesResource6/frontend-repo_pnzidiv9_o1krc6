@@ -1,28 +1,33 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Projects from './components/Projects';
+import About from './components/About';
+import Contact from './components/Contact';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function Footer() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <footer className="w-full bg-black py-10">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 text-sm text-zinc-500">
+        <p>© {new Date().getFullYear()} Your Name. All rights reserved.</p>
+        <div className="flex items-center gap-4">
+          <a href="#home" className="text-zinc-400 transition hover:text-red-400">Top</a>
+          <a href="#work" className="text-zinc-400 transition hover:text-red-400">Work</a>
+          <a href="#contact" className="text-zinc-400 transition hover:text-red-400">Contact</a>
         </div>
       </div>
-    </div>
-  )
+    </footer>
+  );
 }
 
-export default App
+export default function App() {
+  return (
+    <div className="min-h-screen w-full bg-black font-inter text-white">
+      <Navbar />
+      <Hero />
+      <Projects />
+      <About />
+      <Contact />
+      <Footer />
+    </div>
+  );
+}
